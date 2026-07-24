@@ -1,13 +1,19 @@
 package com.generation.fithubdelivery.model;
 
+import java.util.List;
+
 import org.hibernate.validator.constraints.URL;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 
@@ -27,6 +33,10 @@ public class Categoria {
 	@NotBlank(message = "O atributo imagem não pode estar vázio")
 	@URL(message = "O atributo imagem deve conter uma url")
 	private String imagem;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties(value = "categoria", allowSetters = true)
+	private List<Produto> produtos;
 
 	public Long getId() {
 		return id;
@@ -50,6 +60,14 @@ public class Categoria {
 
 	public void setImagem(String imagem) {
 		this.imagem = imagem;
+	}
+
+	public List<Produto> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
 	}
 
 }
