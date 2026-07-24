@@ -173,7 +173,7 @@ Exemplo de requisição:
 
 1. Buscar categoria pelo -
 
-   \```http GET http://localhost:8080/clientes/nome/maria
+   \```http GET http://localhost:8080/categorias/categoria/saudaveis
 
 
 
