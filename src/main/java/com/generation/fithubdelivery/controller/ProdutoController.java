@@ -97,14 +97,14 @@ public class ProdutoController {
 	}
 	
 	@GetMapping("/calorias_maior/{calorias}")
-	public ResponseEntity<List<Produto>> getAllByCaloriasMaiorQue(@PathVariable Integer calorias) {
+	public ResponseEntity<List<Produto>> getAllByCaloriasMaiorQue(@PathVariable BigDecimal calorias) {
 		
 		return ResponseEntity.ok(produtoRepository.findAllByCaloriasGreaterThanOrderByCalorias(calorias));
 		
 	}
 	
 	@GetMapping("/calorias_menor/{calorias}")
-	public ResponseEntity<List<Produto>> getAllByCaloriasMenorQue(@PathVariable Integer calorias) {
+	public ResponseEntity<List<Produto>> getAllByCaloriasMenorQue(@PathVariable BigDecimal calorias) {
 		
 		return ResponseEntity.ok(produtoRepository.findAllByCaloriasLessThanOrderByCaloriasDesc(calorias));
 		

@@ -34,20 +34,21 @@ public class Produto {
 	private String imagem;
 	
 	@NotNull(message = "O atributo Quantidade é obrigatório!")
-	@PositiveOrZero(message = "O atributo Quantidade devem ser zero ou um valor positivo!")
+	@PositiveOrZero(message = "O atributo Quantidade deve ser zero ou um valor positivo!")
 	@Column(nullable = false)
 	private Long quantidade;
 	
 	@NotNull(message = "O atributo Valor é obrigatório!")
-	@Positive(message = "O atributo Valor devem ser positivo!")
+	@Positive(message = "O atributo Valor deve ser positivo!")
 	@Digits(integer = 3, fraction = 2)
 	@Column(precision = 5, scale = 2, nullable = false)
 	private BigDecimal valor;
 	
 	@NotNull(message = "O atributo Calorias é obrigatório!")
 	@PositiveOrZero(message = "O atributo Calorias devem ser zero ou um valor positivo!")
-	@Column(nullable = false)
-	private Integer calorias;
+	@Digits(integer = 4, fraction = 1)
+	@Column(precision = 5, scale = 1, nullable = false)
+	private BigDecimal calorias;
 
 	@NotBlank(message = "O atributo Descrição é obrigatório!")
 	@Size(min = 10, max = 1000, message = "O atributo Descrição deve ter no mínimo 10 e no máximo 1000 caracteres")
@@ -94,11 +95,11 @@ public class Produto {
 		this.valor = valor;
 	}
 
-	public Integer getCalorias() {
+	public BigDecimal getCalorias() {
 		return calorias;
 	}
 
-	public void setCalorias(Integer calorias) {
+	public void setCalorias(BigDecimal calorias) {
 		this.calorias = calorias;
 	}
 

@@ -15,8 +15,8 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
 	public List<Produto> findAllByValorLessThanOrderByValorDesc(BigDecimal valor);
 
-	public List<Produto> findAllByCaloriasGreaterThanOrderByCalorias(Integer calorias);
+	public List<Produto> findAllByCaloriasGreaterThanOrderByCalorias(BigDecimal calorias);
 
-	public List <Produto> findAllByCaloriasLessThanOrderByCaloriasDesc(Integer calorias);
+	public List <Produto> findAllByCaloriasLessThanOrderByCaloriasDesc(BigDecimal calorias);
 
 }
