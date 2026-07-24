@@ -1,0 +1,525 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Delivery
+meta:
+  id: wrk_b8df1acc447149d4853078b28c287f39
+  created: 1784916285542
+  modified: 1784916285542
+  description: ""
+collection:
+  - name: Usuario
+    meta:
+      id: fld_9bec6209bc9d46bc9e07e5062fe65ee2
+      created: 1784568600000
+      modified: 1784916324656
+      sortKey: -1784579588874
+      description: ""
+    children:
+      - url: http://localhost:8080/usuarios/usuario/Ana
+        name: 3. Buscar Usuario por Nome
+        meta:
+          id: req_04da960a03734485b227fcd2202fffb8
+          created: 1784568600000
+          modified: 1784918433696
+          isPrivate: false
+          description: ""
+          sortKey: -1784579588953.75
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios
+        name: 4. Cadastrar Usuario
+        meta:
+          id: req_0bfea8cc098640bb8cd44141cb6c7a16
+          created: 1784568600000
+          modified: 1784918651571
+          isPrivate: false
+          description: ""
+          sortKey: -1784579588950.625
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "nome": "Maria Silva",
+              "email": "maria.silva@email.com",
+            	"endereco": "Av. Jerimanduba",
+            	"cep": "05181-000",
+            	"telefone": "(11) 99962-8541",
+            	"cpf": "662.895.541-14",
+            	"imagem": "https://ik.imagekit.io/dr4gjfxzd/New%20Folder/DV001-1-92-564665_PSH.webp",
+            	"senha": "maria123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios
+        name: 5. Atualizar Usuario
+        meta:
+          id: req_1ad87647df424a49a4ae6c161417e3cc
+          created: 1784568600000
+          modified: 1784918747507
+          isPrivate: false
+          description: ""
+          sortKey: -1784579588947.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"id": 5,
+              "nome": "Maria Silva",
+              "email": "maria.silva@email.com",
+            	"endereco": "Av. Jerimanduba",
+            	"cep": "05181-000",
+            	"telefone": "(11) 99962-8541",
+            	"cpf": "662.895.541-14",
+            	"imagem": "https://ik.imagekit.io/xvzchth17/menina3.jpg",
+            	"senha": "maria123"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios
+        name: 1. Listar Todos os Usuarios
+        meta:
+          id: req_79325529a25c491eb4f3a4880cd4e99c
+          created: 1784568600000
+          modified: 1784918270696
+          isPrivate: false
+          description: ""
+          sortKey: -1784579588985
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios/1
+        name: 2. Buscar Usuario por ID
+        meta:
+          id: req_f34f3c8eebf3484ca7cd9274967b07ea
+          created: 1784568600000
+          modified: 1784918425750
+          isPrivate: false
+          description: ""
+          sortKey: -1784579588960
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Categoria
+    meta:
+      id: fld_2c019e515e4e4de1ae59e0687c43bee7
+      created: 1784606331851
+      modified: 1784916308179
+      sortKey: -1784606331851
+      description: ""
+    children:
+      - url: http://localhost:8080/categorias/categoria/
+        name: 2. Buscar Categoria por ID
+        meta:
+          id: req_25584defbc4746728a662b8109b4200a
+          created: 1784568600000
+          modified: 1784916532563
+          isPrivate: false
+          description: ""
+          sortKey: -1784606340682
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/categorias
+        name: 1. Listar Todos as Categorias
+        meta:
+          id: req_6d783b83162f4088bb9f219aca9d6e3c
+          created: 1784568600000
+          modified: 1784916412745
+          isPrivate: false
+          description: ""
+          sortKey: -1784606340732
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/categorias/4
+        name: 6. Deletar Categoria
+        meta:
+          id: req_7b4cd459e1bf4517809820e4e7ae71df
+          created: 1784568600000
+          modified: 1784916670248
+          isPrivate: false
+          description: ""
+          sortKey: -1784606340538.25
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/categorias
+        name: 4. Cadastrar Categoria
+        meta:
+          id: req_a8ee581824ff47dd91922ae1752ae5e8
+          created: 1784568600000
+          modified: 1784916722444
+          isPrivate: false
+          description: ""
+          sortKey: -1784606340632
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+              "categoria": "Teste",
+              "imagem": "https://ik.imagekit.io/iibl43pgxp/Captura%20de%20tela%202026-07-24%20145432.png"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/categorias/categoria/saudaveis
+        name: 3. Buscar Categoria por Nome da Categoria
+        meta:
+          id: req_d0890283d8634134b7adc3b943c6c6ff
+          created: 1784568600000
+          modified: 1784916600069
+          isPrivate: false
+          description: ""
+          sortKey: -1784606340657
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/categorias
+        name: 5. Atualizar Categoria
+        meta:
+          id: req_d7e17e4531254d7a8bc763fd62520810
+          created: 1784568600000
+          modified: 1784916751381
+          isPrivate: false
+          description: ""
+          sortKey: -1784606340544.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: >-
+            {
+            	"id": 4,
+              "categoria": "Teste2",
+              "imagem": "https://ik.imagekit.io/iibl43pgxp/Captura%20de%20tela%202026-07-24%20145432.png"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Produto
+    meta:
+      id: fld_ddb9e932baf445ffba7c79fbf900959a
+      created: 1784916318248
+      modified: 1784916318248
+      sortKey: -1784544098629.75
+      description: ""
+    children:
+      - url: http://localhost:8080/produtos
+        name: 9. Cadastrar Produto
+        meta:
+          id: req_05c7ed7ce1e34a049120750dee130754
+          created: 1784916318248
+          modified: 1784917538124
+          isPrivate: false
+          description: ""
+          sortKey: -1784579588950.625
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+            	"produto": "Ships de vegetais",
+            	"imagem": "https://ik.imagekit.io/iibl43pgxp/mix-original-2-4o7muenjo8.webp",
+            	"quantidade": "100",
+            	"valor": "10",
+            	"calorias": "100",
+            	"descricao": "Ships saudáveis de vegetais para alegrar sua tarde"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/produtos/produto/barra
+        name: 3. Buscar Produto por Nome do Produto
+        meta:
+          id: req_0e8b47e504174641a44aed4cc5c8fe91
+          created: 1784916318248
+          modified: 1784916924132
+          isPrivate: false
+          description: ""
+          sortKey: -1784579588953.75
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/produtos
+        name: 10. Atualizar Produto
+        meta:
+          id: req_30c1bf0815b14736b38c9dca73736538
+          created: 1784916318248
+          modified: 1784917659891
+          isPrivate: false
+          description: ""
+          sortKey: -1784579588947.5
+        method: PUT
+        body:
+          mimeType: application/json
+          text: >-
+            {
+            	"id": 5,
+            	"produto": "Ships de vegetais - Atualizado",
+            	"imagem": "https://ik.imagekit.io/iibl43pgxp/mix-original-2-4o7muenjo8.webp",
+            	"quantidade": "100",
+            	"valor": "10",
+            	"calorias": "100",
+            	"descricao": "Ships saudáveis de vegetais para alegrar sua tarde"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/produtos/5
+        name: 11. Deletar Produto
+        meta:
+          id: req_33664c460f5649ad8bc712bc6515f166
+          created: 1784916318248
+          modified: 1784917678775
+          isPrivate: false
+          description: ""
+          sortKey: -1784579588935
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/produtos/1
+        name: 2. Buscar Produto por ID
+        meta:
+          id: req_8137f0a1ca034d8893d3366c4a016381
+          created: 1784916318248
+          modified: 1784916911859
+          isPrivate: false
+          description: ""
+          sortKey: -1784579588960
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/produtos
+        name: 1. Listar Todos os Produtos
+        meta:
+          id: req_8e10c68274e2439cbb975f6583244556
+          created: 1784916318248
+          modified: 1784916799988
+          isPrivate: false
+          description: ""
+          sortKey: -1784579588985
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/produtos/valor_maior/10
+        name: 4. Buscar Produto por Valor Maior Que
+        meta:
+          id: req_a0df8c256baf4c65828a856d946ea19f
+          created: 1784916953175
+          modified: 1784917086643
+          isPrivate: false
+          description: ""
+          sortKey: -1784579588952.1875
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/produtos/valor_menor/10
+        name: 5. Buscar Produto por Valor Menor Que
+        meta:
+          id: req_987913a0f5e24d1e9ca3d7691c730fbd
+          created: 1784916964252
+          modified: 1784917096334
+          isPrivate: false
+          description: ""
+          sortKey: -1784579588951.4062
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/produtos/calorias_maior/50
+        name: 6. Buscar Produto por Caloria Maior Que
+        meta:
+          id: req_3b7510d37a874f94ab22cf322189f350
+          created: 1784916986716
+          modified: 1784917167509
+          isPrivate: false
+          description: ""
+          sortKey: -1784579588951.0156
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/produtos/recomendados/10
+        name: 8. Buscar Produto por valor recomendado de caloria
+        meta:
+          id: req_8b64a0f138eb43fc8463a8aa80ffe8e6
+          created: 1784916996405
+          modified: 1784917183775
+          isPrivate: false
+          description: ""
+          sortKey: -1784579588950.8203
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/produtos/calorias_menor/50
+        name: 7. Buscar Produto por Caloria Menor Que
+        meta:
+          id: req_a3ee36b03c424970951439ca0f59e5e7
+          created: 1784917118985
+          modified: 1784917152331
+          isPrivate: false
+          description: ""
+          sortKey: -1784579588950.918
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_ba667629e4d94331aaed6811c389963d
+    created: 1784579547043
+    modified: 1784579547043
+environments:
+  name: Base Environment
+  meta:
+    id: env_e18223c86da64f45b2c7b35fb474470a
+    created: 1784579547037
+    modified: 1784579547037
+    isPrivate: false
