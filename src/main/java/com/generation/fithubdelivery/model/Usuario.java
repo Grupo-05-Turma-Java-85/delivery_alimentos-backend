@@ -16,44 +16,53 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-@JsonPropertyOrder({ "id", "nome", "cpf", "email", "telefone", "endereco", "cep",})
+@JsonPropertyOrder({ "id", "nome", "imagem", "senha", "cpf", "email", "telefone", "endereco", "cep", })
 
 @Entity
 @Table(name = "tb_usuarios")
 public class Usuario {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@NotBlank(message = "O atributo nome é Obrigatório!")
 	@Size(min = 3, max = 100, message = "O atributo nome deve conter no mínimo 03 e no máximo 100 caracteres")
 	private String nome;
-	
+
 	@NotBlank(message = "O atributo email é Obrigatório!")
 	@Email(message = "O atributo email deve ser um email válido")
 	private String email;
-	
+
 	@NotBlank(message = "O atributo endereço é Obrigatório!")
 	@Size(min = 5, max = 150, message = "O atributo endereço deve conter no mínimo 05 e nomáximo 150 caracteres")
 	@Column(length = 150)
 	private String endereco;
-	
+
 	@NotBlank(message = "O atributo CEP é Obrigatório!")
 	@Size(min = 8, max = 10, message = "O atributo CEP deve conter no mínimo 08 e nomáximo 10 caracteres")
 	@Column(length = 10)
 	private String cep;
-	
+
 	@NotBlank(message = "O atributo telefone é Obrigatório!")
 	@Size(min = 8, max = 15, message = "O atributo telefone deve conter no mínimo 08 e nomáximo 15 caracteres")
 	@Column(length = 15)
 	private String telefone;
-	
+
 	@NotBlank(message = "O atributo CPF é Obrigatório!")
 	@Size(min = 11, max = 15, message = "O atributo CPF deve conter no mínimo 08 e nomáximo 15 caracteres")
 	@Column(length = 15)
 	private String cpf;
-	
+
+	@NotBlank(message = "O atributo Imagem não pode estar vazio!")
+	@Size(max = 255, message = "O atributo CPF deve conter no mínimo 08 e nomáximo 15 caracteres")
+	@Column(length = 255)
+	private String imagem;
+
+	@NotBlank(message = "O atributo Senha não pode estar vazio")
+	@Size(min = 8, message = "A senha deve ter no minimo 8 caracteres")
+	private String senha;
+
 	@OneToMany(mappedBy = "usuario")
 	@JsonIgnoreProperties("usuario")
 	private List<Produto> produtos;
@@ -121,5 +130,21 @@ public class Usuario {
 	public void setProdutos(List<Produto> produtos) {
 		this.produtos = produtos;
 	}
-	
+
+	public String getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
 }
