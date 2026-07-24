@@ -36,10 +36,10 @@ public class UsuarioController {
 	}
 
 	@GetMapping("usuario/{nome}")
-	public ResponseEntity<List<Usuario>> getByNome(@PathVariable String nome){
+	public ResponseEntity<List<Usuario>> getByNome(@PathVariable String nome) {
 		return ResponseEntity.ok(usuarioRepository.findAllByNomeContainingIgnoreCase(nome));
 	}
-	
+
 	@PostMapping
 	public ResponseEntity<Usuario> post(@Valid @RequestBody Usuario usuario) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioRepository.save(usuario));
@@ -52,12 +52,4 @@ public class UsuarioController {
 				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 	}
 
-	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> delete(@PathVariable Long id) {
-		if (usuarioRepository.existsById(id)) {
-			usuarioRepository.deleteById(id);
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-		}
-		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-	}
 }
