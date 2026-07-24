@@ -21,6 +21,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.generation.fithubdelivery.model.Produto;
 import com.generation.fithubdelivery.repository.ProdutoRepository;
+import com.generation.fithubdelivery.service.ProdutoService;
 
 import jakarta.validation.Valid;
 
@@ -31,6 +32,9 @@ public class ProdutoController {
 
 	@Autowired
 	private ProdutoRepository produtoRepository;
+	
+	@Autowired
+	private ProdutoService produtoService;
 	
 	@GetMapping
 	public ResponseEntity<List<Produto>> getAll() {
@@ -54,6 +58,8 @@ public class ProdutoController {
 		return ResponseEntity.ok(produtoRepository.findAllByProdutoContainingIgnoreCase(produto));
 		
 	}
+	
+	
 	
 	@PostMapping
 	public ResponseEntity<Produto> post(@Valid @RequestBody Produto produto) {
@@ -99,14 +105,21 @@ public class ProdutoController {
 	@GetMapping("/calorias_maior/{calorias}")
 	public ResponseEntity<List<Produto>> getAllByCaloriasMaiorQue(@PathVariable BigDecimal calorias) {
 		
-		return ResponseEntity.ok(produtoRepository.findAllByCaloriasGreaterThanOrderByCalorias(calorias));
+		return ResponseEntity.ok(produtoRepository.findAllByCaloriasGreaterThanEqualOrderByCaloriasAsc(calorias));
 		
 	}
 	
 	@GetMapping("/calorias_menor/{calorias}")
 	public ResponseEntity<List<Produto>> getAllByCaloriasMenorQue(@PathVariable BigDecimal calorias) {
 		
-		return ResponseEntity.ok(produtoRepository.findAllByCaloriasLessThanOrderByCaloriasDesc(calorias));
+		return ResponseEntity.ok(produtoRepository.findAllByCaloriasLessThanEqualOrderByCaloriasAsc(calorias));
 		
+	}
+	
+	@GetMapping("/recomendados/{calorias}")
+	public ResponseEntity<List<Produto>> recomendar(@PathVariable BigDecimal calorias) {
+	    return ResponseEntity.ok(
+	        produtoService.recomendarProdutos(calorias)
+	    );
 	}
 }
