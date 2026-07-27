@@ -1,8 +1,9 @@
 # Delivery Alimentos FitNutri - Backend
 
 <p align="center">
-  <img src="https://i.imgur.com/Ei8epc3.png" width="300" alt="FitHub Delivery">
+  <img src="https://ik.imagekit.io/iibl43pgxp/Captura%20de%20tela%202026-07-27%20102743.png" width="450" alt="FitHub Delivery">
 </p>
+
 
 [![Top Language](https://img.shields.io/github/languages/top/Grupo-05-Turma-Java-85/delivery_alimentos-backend?style=flat-square)](https://github.com/Grupo-05-Turma-Java-85/delivery_alimentos-backend)[![Repo Size](https://img.shields.io/github/repo-size/Grupo-05-Turma-Java-85/delivery_alimentos-backend?style=flat-square)](https://github.com/Grupo-05-Turma-Java-85/delivery_alimentos-backend)[![Last Commit](https://img.shields.io/github/last-commit/Grupo-05-Turma-Java-85/delivery_alimentos-backend?style=flat-square)](https://github.com/Grupo-05-Turma-Java-85/delivery_alimentos-backend)[![Java](https://img.shields.io/badge/Java-17-red?style=flat-square&logo=openjdk)](https://openjdk.org/)[![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=flat-square&logo=springboot)](https://spring.io/projects/spring-boot)
 [![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)](https://www.mysql.com/)[![Maven](https://img.shields.io/badge/Maven-C71A36?style=flat-square&logo=apachemaven)](https://maven.apache.org/)[![JPA](https://img.shields.io/badge/JPA-Hibernate-59666C?style=flat-square)](https://hibernate.org/)[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
@@ -37,15 +38,16 @@ O projeto foi desenvolvido utilizando **Java**, **Spring Boot**, **Spring Data J
 
 # 3. Diagrama de Classes
 
-<p align="center">   <img src="https://ik.imagekit.io/iibl43pgxp/diagrama-classes%20(1).png" width="1500" alt="Diagrama de Classes"> </p>
+<p align="center">   <img src="https://ik.imagekit.io/iibl43pgxp/diagrama_de_classes_verde_musgo.png" width="1500" alt="Diagrama de Classes"> </p>
 
 
 
 # 4. Diagrama Entidade-Relacionamento (DER)
 
 <p align="center">
-  <img src="https://ik.imagekit.io/iibl43pgxp/diagrama-er.png" width="1500" alt="Diagrama de Entidade-Relacionamento">
+  <img src="https://ik.imagekit.io/iibl43pgxp/diagrama_entidade_relacionamento_verde_musgo.png" width="1500" alt="Diagrama de Entidade-Relacionamento">
 </p>
+
 
 
 
